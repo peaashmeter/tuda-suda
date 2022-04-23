@@ -42,7 +42,6 @@ dependencies:
   path_provider: ^2.0.6
   flutter_launcher_icons: ^0.9.2
   url_launcher: ^6.0.17
-  audioplayers: ^0.20.1
   share: ^2.0.4
   statsfl: ^2.0.1+1
   provider: ^6.0.0

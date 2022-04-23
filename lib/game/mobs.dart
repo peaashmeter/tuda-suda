@@ -392,12 +392,12 @@ class Player extends Mob {
     if (mobs.where((mob) => mob.isDangerous).isNotEmpty) {
       isAlive = false;
       lose();
-      audio.playLoseSound();
+      //audio.playLoseSound();
       return true;
     }
     if (mobs.whereType<Exit>().isNotEmpty) {
       isAlive = false;
-      audio.playWinSound();
+      //audio.playWinSound();
       win();
       return true;
     }
@@ -441,7 +441,7 @@ class Player extends Mob {
       isTurnMade = true;
       update.call();
       if (isAlive) {
-        audio.playMoveSound();
+        //audio.playMoveSound();
       }
     }
   }
@@ -721,10 +721,10 @@ class Switcher extends Mob with Emitter, Electric, Activable {
     if (scheduledActivation) {
       signals.add(!isOn);
       connected = false;
-      if (!audio.soundQueue.contains(audio.Sounds.switcher)) {
-        audio.playSwitcherSound();
-        audio.soundQueue.add(audio.Sounds.switcher);
-      }
+      // if (!audio.soundQueue.contains(audio.Sounds.switcher)) {
+      //   audio.playSwitcherSound();
+      //   audio.soundQueue.add(audio.Sounds.switcher);
+      // }
       scheduledActivation = false;
     }
 
@@ -1142,10 +1142,10 @@ class Pressure extends Mob with Emitter, Activable {
     if (scheduledActivation) {
       super.emitSignal(mobsIds, true, connectedTo);
 
-      if (!audio.soundQueue.contains(audio.Sounds.switcher)) {
-        audio.playSwitcherSound();
-        audio.soundQueue.add(audio.Sounds.switcher);
-      }
+      // if (!audio.soundQueue.contains(audio.Sounds.switcher)) {
+      //   audio.playSwitcherSound();
+      //   audio.soundQueue.add(audio.Sounds.switcher);
+      // }
 
       scheduledActivation = false;
     } else {
